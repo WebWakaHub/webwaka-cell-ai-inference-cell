@@ -1,9 +1,27 @@
 /**
- * InferenceCell — Public API
- * Cell: CEL-AI-INFERENCE_CELL-v0.1.0
- * Category: Intelligence & Automation
+ * AiInferenceCell — Cell Layer
+ * Composes organelles per BIOLOGICAL_GOVERNANCE_CONSTITUTION §4.1
+ * Layer: cell → depends on → organelle
  */
 
-export { InferenceCell, InferenceCellValidationError } from './ai-inference-cell-cell';
-export { InferenceCellOrchestrator } from './ai-inference-cell-orchestrator';
-export * from './types';
+import { CognitivePortOrchestrator } from "@webwaka/organelle-cognitive-port";
+import { ExternalAdapterOrchestrator } from "@webwaka/organelle-external-adapter";
+
+export { CognitivePortOrchestrator } from '@webwaka/organelle-cognitive-port';
+export { ExternalAdapterOrchestrator } from '@webwaka/organelle-external-adapter';
+
+/**
+ * AiInferenceCell Composition
+ * Assembles organelle-layer components into a cohesive cell-layer capability.
+ */
+export class AiInferenceCellComposition {
+  private cognitivePortOrchestrator: CognitivePortOrchestrator;
+  private externalAdapterOrchestrator: ExternalAdapterOrchestrator;
+
+  constructor() {
+    this.cognitivePortOrchestrator = new CognitivePortOrchestrator();
+    this.externalAdapterOrchestrator = new ExternalAdapterOrchestrator();
+  }
+}
+
+export * from "./types";
